@@ -11,7 +11,10 @@ function exportAccountData({txns}, month) {
         processedDate: formatDate(txn.processedDate),
       };
     });
-  return json2csv.parse(data, {withBOM: true});
+
+  if (data.length) {
+    return json2csv.parse(data, {withBOM: true});
+  }
 }
 
 function formatDate(isoString) {
