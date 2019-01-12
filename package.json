@@ -1,13 +1,16 @@
 {
-  "name": "home-budget",
+  "name": "taktsiv",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/index.js --conf=../.private/settings",
     "test:mocha": "mocha 'test/**/*.test.js' --no-timeouts",
     "test": "npm run test:mocha && npm run eslint",
     "eslint": "eslint './**/*.js'"
+  },
+  "bin": {
+    "taktsiv": "src/index.js"
   },
   "files": [
     "src"
