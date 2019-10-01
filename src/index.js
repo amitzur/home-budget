@@ -16,7 +16,7 @@ async function main({conf, file}) {
   const processFile = makeProcessFile({saveData, readFile});
   const scrapeData = makeScrapeData({saveData, scrapeIsracard});
 
-  const settings = require(conf);
+  const settings = require(path.resolve(process.cwd(), conf));
   console.log('settings:', settings);
   const {credentials, month, year, saveLocation} = settings;
 

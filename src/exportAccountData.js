@@ -13,7 +13,10 @@ function exportAccountData({txns}, month) {
     });
 
   if (data.length) {
-    return json2csv.parse(data, {withBOM: true});
+    return json2csv.parse(data, {
+      withBOM: true,
+      fields: ['description', 'date', 'processedDate', 'chargedAmount', 'memo'],
+    });
   }
 }
 
